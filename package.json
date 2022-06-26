@@ -1,0 +1,23 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^2.1.0",
+    "@vue/babel-helper-vue-jsx-merge-props": "^1.2.1",
+    "@vue/babel-preset-jsx": "^1.2.4",
+    "vue": "^3",
+    "vue-template-compiler": "^2.6.14",
+    "webpack-notifier": "^1.15.0"
+  },
+    "alias": {
+        "vue": "./node_modules/vue/dist/vue.esm-bundler.js"
+    },
+
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@symfony/stimulus-bridge": "^3.2.1",
+    "ansi-styles": "^6.1.0",
+    "chalk": "^5.0.1",
+    "core-js": "^3.23.2",
+    "vue-loader": "^17",
+    "@vue/compiler-sfc": "^3.2.29"
+  }
+}

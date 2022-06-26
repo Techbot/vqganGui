@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+  }
+  
+  /*!*************************************************************************************************!*\
+    !*** css ./node_modules/css-loader/dist/cjs.js??clonedRuleSet-3.use[1]!./assets/styles/app.css ***!
+    \*************************************************************************************************/
+  
+  #frame {
+    background-color: white;
+  }
+  
+  #frameList {
+    background-color: white;
+    width:90%;
+  }
+  #wordList {
+    background-color: white;
+    padding:1%;
+  }
+  
+  #rightWord{
+    float: right;
+
+  } 
+
+
+   #leftWord{
+    float: left;
+    width:50%;
+  }

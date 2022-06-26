@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vqgan Movies</title>
+        <script src="https://unpkg.com/vue@3"></script>
+        <link rel="stylesheet" type="text/css" href="/build/app.css" />
+    </head>
+    <body>
+        <ul id="navigation">
+            <li><a href="http://www.emcradio.com/index.php/"> Home</a></li>
+            <li><a href="http://www.emcradio.com/index.php/"> About Us</a></li>
+            <li><a href="http://www.emcradio.com/index.php/frame">Frames</a></li>
+            <li><a href="http://www.emcradio.com/index.php/word"> Words</a></li>
+            <li><a href="http://www.emcradio.com/index.php/word/cat"> Categories</a></li>
+        </ul>
+        {% block body %}
+        <div id="content">
+            {% block content %}{% endblock %}
+        </div>
+        {% endblock %}
+    </body>
+</html>
