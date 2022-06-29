@@ -1,5 +1,5 @@
 <?php
-namespace App\Command;
+namespace App\Entity;
 
 use App\Entity\Frame;
 
