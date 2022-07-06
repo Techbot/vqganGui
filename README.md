@@ -15,4 +15,4 @@ Next:
 * Add Login/Admin page
 * move crud to Admin
   
-[Vqgan Gui](img/gui.png)
+![Vqgan Gui](img/gui.png)
