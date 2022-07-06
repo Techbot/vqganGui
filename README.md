@@ -14,4 +14,5 @@ Next:
 * Add User object,
 * Add Login/Admin page
 * move crud to Admin
-[Vqgan Gui](techbot.github.com/vqganGui/img/gui.png)
+  
+[Vqgan Gui](img/gui.png)
