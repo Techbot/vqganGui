@@ -9,4 +9,10 @@ Supervisord for process managment,
 Symfony for admin,
 and python scripts moved from Jupitor pages for the actual creation of the files.
 
-![1657088051717](image/README/1657088051717.png)
+Next:
+
+* Add User object,
+* Add Login/Admin page
+* move crud to Admin
+
+`[Vqgan Gui](techbot.github.com/vqganGui/img/gui.png)`
