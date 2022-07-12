@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 #[Route('/wordjs')]
 class WordJsController extends AbstractController
 {
-    #[Route('/', name: 'app_word_index', methods: ['GET'])]
+    #[Route('/', name: 'app_wordjs_index', methods: ['GET'])]
     public function index(WordRepository $wordRepository): JsonResponse
     {
        $payload =  $wordRepository->findAll();
@@ -24,7 +24,7 @@ class WordJsController extends AbstractController
         return $this->json($data);
     }
 
-    #[Route('/new', name: 'app_word_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_wordjs_new', methods: ['GET', 'POST'])]
     public function new(Request $request, WordRepository $wordRepository): Response
     {
         $word = new Word();

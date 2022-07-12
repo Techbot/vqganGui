@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Frame;
-use App\Form\FrameType;
+use App\Form\Frame1Type;
 use App\Repository\FrameRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,6 +16,7 @@ class FrameController extends AbstractController
     #[Route('/', name: 'app_frame_index', methods: ['GET'])]
     public function index(FrameRepository $frameRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('frame/index.html.twig', [
             'frames' => $frameRepository->findAll(),
         ]);
@@ -24,8 +25,9 @@ class FrameController extends AbstractController
     #[Route('/new', name: 'app_frame_new', methods: ['GET', 'POST'])]
     public function new(Request $request, FrameRepository $frameRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $frame = new Frame();
-        $form = $this->createForm(FrameType::class, $frame);
+        $form = $this->createForm(Frame1Type::class, $frame);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -43,6 +45,7 @@ class FrameController extends AbstractController
     #[Route('/{id}', name: 'app_frame_show', methods: ['GET'])]
     public function show(Frame $frame): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('frame/show.html.twig', [
             'frame' => $frame,
         ]);
@@ -51,7 +54,8 @@ class FrameController extends AbstractController
     #[Route('/{id}/edit', name: 'app_frame_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Frame $frame, FrameRepository $frameRepository): Response
     {
-        $form = $this->createForm(FrameType::class, $frame);
+        $this->denyAccessUnlessGranted('ROLE_USER');
+        $form = $this->createForm(Frame1Type::class, $frame);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -69,6 +73,7 @@ class FrameController extends AbstractController
     #[Route('/{id}', name: 'app_frame_delete', methods: ['POST'])]
     public function delete(Request $request, Frame $frame, FrameRepository $frameRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         if ($this->isCsrfTokenValid('delete'.$frame->getId(), $request->request->get('_token'))) {
             $frameRepository->remove($frame, true);
         }

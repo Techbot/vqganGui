@@ -16,6 +16,7 @@ class WordController extends AbstractController
     #[Route('/', name: 'app_word_index', methods: ['GET'])]
     public function index(WordRepository $wordRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('word/index.html.twig', [
             'words' => $wordRepository->findAll(),
         ]);
@@ -24,6 +25,7 @@ class WordController extends AbstractController
     #[Route('/new', name: 'app_word_new', methods: ['GET', 'POST'])]
     public function new(Request $request, WordRepository $wordRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $word = new Word();
         $form = $this->createForm(WordType::class, $word);
         $form->handleRequest($request);
@@ -51,6 +53,7 @@ class WordController extends AbstractController
     #[Route('/{id}/edit', name: 'app_word_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Word $word, WordRepository $wordRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $form = $this->createForm(WordType::class, $word);
         $form->handleRequest($request);
 
@@ -69,6 +72,7 @@ class WordController extends AbstractController
     #[Route('/{id}', name: 'app_word_delete', methods: ['POST'])]
     public function delete(Request $request, Word $word, WordRepository $wordRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         if ($this->isCsrfTokenValid('delete'.$word->getId(), $request->request->get('_token'))) {
             $wordRepository->remove($word, true);
         }

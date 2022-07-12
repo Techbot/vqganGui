@@ -10,14 +10,11 @@ Supervisord for process managment,
 Symfony for admin,
 and python scripts moved from Jupitor pages for the actual creation of the files.
 
-
 Next:
 
 * Add User object,
 * Add Login/Admin page
 * move crud to Admin
-
-
 
 Done:
 
@@ -31,7 +28,6 @@ Step 6: Convert Jupitor file to python script for server 2 and 3
 Step 7: Adapt Python script to read in values from Server 
 
 ![Vqgan Gui](img/gui.png)
-
 
 Server 1:  Mysql, Symfony for REST API
 

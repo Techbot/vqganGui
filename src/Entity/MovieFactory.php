@@ -3,7 +3,7 @@ namespace App\Entity;
 
 use App\Entity\Frame;
 
-class FrameFactory
+class MovieFactory
 {
     public static function create(
         string $title,
@@ -21,13 +21,7 @@ class FrameFactory
         $frame = new Frame();
         $frame->setName($title);
         $frame->setFilename($content);
-        $frame->setTEXT($TEXT);
-        $frame->setOPTIMISER($OPTIMISER);
-        $frame->setLR($LR);
-        $frame->setIMAXEPOCHS($IMAXEPOCHS);
-        $frame->setSeMAXEPOCHS($eMAXEPOCHS);
-        $frame->setSEED($SEED);
-        $frame->setDESTINATION($DESTINATION);
+
         return $frame;
     }
 }

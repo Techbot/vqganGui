@@ -3,7 +3,7 @@ namespace App\Entity;
 
 use App\Entity\Frame;
 
-class FrameFactory
+class ActionFactory
 {
     public static function create(
         string $title,

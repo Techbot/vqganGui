@@ -14,9 +14,6 @@ class MainController extends AbstractController{
     public function __construct(private FrameRepository      $frames)
     {
     }
-
-
-
     #[Route(path: "/all", name: "all", methods: ["GET"])]
     function all(): Response
     {
@@ -32,6 +29,10 @@ class MainController extends AbstractController{
     #[Route(path: "/", name: "ball", methods: ["GET"])]
     function two(): Response
     {
+
+     //   $this->denyAccessUnlessGranted('ROLE_USER');
+
+
         $data = $this->frames->findAll();
         rsort($data);
         foreach ($data as $frame){
@@ -43,6 +44,14 @@ class MainController extends AbstractController{
        //return $this->json($data, 200, ["Content-Type" => "application/json"]);
         return $this->render('base/home.html.twig', [
             "datalist"=>$frames
+        ]);
+    }
+
+    #[Route('/main', name: 'app_login22222', methods: ["GET"])]
+    public function index(): Response
+    {
+        return $this->render('login/index.html.twig', [
+            'controller_name' => 'MainController',
         ]);
     }
 

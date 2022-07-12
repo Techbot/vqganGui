@@ -24,7 +24,7 @@ class ActionJsController extends AbstractController
          return $this->json($data);
     }
 
-    #[Route('/new', name: 'app_action_new', methods: ['GET', 'POST'])]
+    #[Route('/new', name: 'app_actionjs_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ActionRepository $actionRepository): Response
     {
         $action = new Action();
@@ -43,7 +43,7 @@ class ActionJsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_action_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_actionjs_show', methods: ['GET'])]
     public function show(Action $action): Response
     {
         return $this->render('action/show.html.twig', [
@@ -69,7 +69,7 @@ class ActionJsController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_action_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_actionjs_delete', methods: ['POST'])]
     public function delete(Request $request, Action $action, ActionRepository $actionRepository): Response
     {
         if ($this->isCsrfTokenValid('delete'.$action->getId(), $request->request->get('_token'))) {

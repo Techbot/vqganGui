@@ -40,6 +40,9 @@ class Frame
     #[ORM\Column(type: 'string', length: 255)]
     private $DESTINATION;
 
+    #[ORM\Column(type: 'integer')]
+    private $ITER;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -153,6 +156,17 @@ class Frame
         return $this;
     }
 
+    public function getIter(): ?int
+    {
+        return $this->ITER;
+    }
+
+    public function setIter(string $ITER): self
+    {
+        $this->ITER = $ITER;
+
+        return $this;
+    }
 
     public function asArray(): array
     {
@@ -166,7 +180,8 @@ class Frame
             'maxEpochs' => $this->iMAX_EPOCHS,
             'seEpochs' =>  $this->seMAX_EPOCHS,
             'seed' => $this->SEED,
-            'destination' => $this->DESTINATION
+            'destination' => $this->DESTINATION,
+            'iter' => $this->ITER,
         ];
     }
 

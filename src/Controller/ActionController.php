@@ -16,6 +16,7 @@ class ActionController extends AbstractController
     #[Route('/', name: 'app_action_index', methods: ['GET'])]
     public function index(ActionRepository $actionRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('action/index.html.twig', [
             'actions' => $actionRepository->findAll(),
         ]);
@@ -24,6 +25,7 @@ class ActionController extends AbstractController
     #[Route('/new', name: 'app_action_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ActionRepository $actionRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $action = new Action();
         $form = $this->createForm(ActionType::class, $action);
         $form->handleRequest($request);
@@ -43,6 +45,7 @@ class ActionController extends AbstractController
     #[Route('/{id}', name: 'app_action_show', methods: ['GET'])]
     public function show(Action $action): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         return $this->render('action/show.html.twig', [
             'action' => $action,
         ]);
@@ -51,6 +54,7 @@ class ActionController extends AbstractController
     #[Route('/{id}/edit', name: 'app_action_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Action $action, ActionRepository $actionRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_USER');
         $form = $this->createForm(ActionType::class, $action);
         $form->handleRequest($request);
 
@@ -69,6 +73,7 @@ class ActionController extends AbstractController
     #[Route('/{id}', name: 'app_action_delete', methods: ['POST'])]
     public function delete(Request $request, Action $action, ActionRepository $actionRepository): Response
     {
+             $this->denyAccessUnlessGranted('ROLE_USER');
         if ($this->isCsrfTokenValid('delete'.$action->getId(), $request->request->get('_token'))) {
             $actionRepository->remove($action, true);
         }
