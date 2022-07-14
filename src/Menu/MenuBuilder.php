@@ -4,7 +4,6 @@ namespace App\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
-
 class MenuBuilder
 {
     private $factory;
