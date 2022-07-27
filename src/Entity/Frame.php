@@ -43,6 +43,21 @@ class Frame
     #[ORM\Column(type: 'integer')]
     private $ITER;
 
+    #[ORM\Column(type: 'integer')]
+    private $word_one;
+
+    #[ORM\Column(type: 'integer')]
+    private $word_two;
+
+    #[ORM\Column(type: 'integer')]
+    private $word_three;
+
+    #[ORM\Column(type: 'integer')]
+    private $word_four;
+
+    #[ORM\Column(type: 'integer')]
+    private $word_five;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -183,6 +198,66 @@ class Frame
             'destination' => $this->DESTINATION,
             'iter' => $this->ITER,
         ];
+    }
+
+    public function getWordOne(): ?int
+    {
+        return $this->word_one;
+    }
+
+    public function setWordOne(int $word_one): self
+    {
+        $this->word_one = $word_one;
+
+        return $this;
+    }
+
+    public function getWordTwo(): ?int
+    {
+        return $this->word_two;
+    }
+
+    public function setWordTwo(int $word_two): self
+    {
+        $this->word_two = $word_two;
+
+        return $this;
+    }
+
+    public function getWordThree(): ?int
+    {
+        return $this->word_three;
+    }
+
+    public function setWordThree(int $word_three): self
+    {
+        $this->word_three = $word_three;
+
+        return $this;
+    }
+
+    public function getWordFour(): ?int
+    {
+        return $this->word_four;
+    }
+
+    public function setWordFour(int $word_four): self
+    {
+        $this->word_four = $word_four;
+
+        return $this;
+    }
+
+    public function getWordFive(): ?int
+    {
+        return $this->word_five;
+    }
+
+    public function setWordFive(int $word_five): self
+    {
+        $this->word_five = $word_five;
+
+        return $this;
     }
 
 
